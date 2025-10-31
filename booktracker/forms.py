@@ -5,7 +5,7 @@ from .models import Book, Review
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ['title', 'author', 'description', 'status']  # Pola formularza
+        fields = ['title', 'author', 'description', 'status']   #pola formularza
         labels = {
             'title': 'Tytuł',
             'author': 'Autor',

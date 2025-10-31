@@ -1,15 +1,14 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1></h1>
+    <h1 style="text-align: center;">Recenzje:</h1>
 
-    <!-- Pasek wyszukiwania -->
+    <!-- pasek wyszukiwania -->
     <div class="search-container">
         <input type="text" id="search" placeholder="Szukaj książki..." onkeyup="searchBooks()">
     </div>
 
-    <!-- Lista książek -->
+    <!-- lista książek -->
     {% for book in books %}
         <div class="book" data-title="{{ book.title|lower }}">
             <h2>{{ book.title }}</h2>
@@ -33,7 +32,7 @@
         <hr>
     {% endfor %}
 
-    <!-- JavaScript do filtrowania książek -->
+    <!-- js filtrowania książek -->
     <script>
         function searchBooks() {
             let input = document.getElementById('search');
@@ -51,9 +50,3 @@
         }
     </script>
 {% endblock %}
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Add Review for {{ book.title }}</h1>
+    <h1 style="text-align: center;">Dodaj recenzję dla:  {{ book.title }}</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
