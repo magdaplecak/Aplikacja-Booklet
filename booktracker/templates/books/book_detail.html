@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ book.title }} by {{ book.author }}</h1>
+    <p>{{ book.description }}</p>
+    <p>Status: {{ book.get_status_display }}</p>
+
+    <h2>Reviews</h2>
+    {% if reviews %}
+        <ul>
+            {% for review in reviews %}
+                <li>
+                    <strong>Rating:</strong> {{ review.rating }} / 10<br>
+                    <strong>Review:</strong> {{ review.review_text }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet for this book.</p>
+    {% endif %}
+{% endblock %}

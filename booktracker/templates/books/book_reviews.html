@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1></h1>
+
+    <!-- Pasek wyszukiwania -->
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Szukaj książki..." onkeyup="searchBooks()">
+    </div>
+
+    <!-- Lista książek -->
+    {% for book in books %}
+        <div class="book" data-title="{{ book.title|lower }}">
+            <h2>{{ book.title }}</h2>
+            <p><strong>Autor:</strong> {{ book.author }}</p>
+            <p><strong>Status:</strong> {{ book.get_status_display }}</p>
+
+            <h3>Recenzje:</h3>
+            {% if book.reviews.all %}
+                <ul>
+                    {% for review in book.reviews.all %}
+                        <li>
+                            <p><strong>Ocena od 1 do 10:</strong> {{ review.rating }}</p>
+                            <p><strong>Recenzja:</strong> {{ review.review_text }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No reviews available.</p>
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+
+    <!-- JavaScript do filtrowania książek -->
+    <script>
+        function searchBooks() {
+            let input = document.getElementById('search');
+            let filter = input.value.toLowerCase();
+            let books = document.querySelectorAll('.book');
+
+            books.forEach(function(book) {
+                let title = book.getAttribute('data-title');
+                if (title.indexOf(filter) > -1) {
+                    book.style.display = ""; // Pokaż książkę
+                } else {
+                    book.style.display = "none"; // Ukryj książkę
+                }
+            });
+        }
+    </script>
+{% endblock %}
+
+
+
+
+
+

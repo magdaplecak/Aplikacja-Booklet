@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+
+    <!-- Załaduj czcionkę Raleway z Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Załaduj plik CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1></h1> <!-- Nagłówek -->
+    </header>
+
+    <!-- Przeniesiono linki poza nagłówek -->
+    <div class="nav-links">
+        <nav>
+            <a href="{% url 'book_list' %}">
+                <img src="/static/images/book_list.png" alt="Lista książek" class="nav-button">
+            </a>
+            <a href="{% url 'add_book' %}">
+                <img src="/static/images/add_book.png" alt="Dodaj książkę" class="nav-button">
+            </a>
+            <a href="{% url 'book_reviews' %}">
+                <img src="/static/images/reviews.png" alt="Recenzje" class="nav-button">
+            </a>
+        </nav>
+    </div>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

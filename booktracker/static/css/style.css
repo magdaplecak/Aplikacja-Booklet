@@ -1,0 +1,208 @@
+/* Resetowanie marginesów i paddingu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tło dla całej strony */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffdcc8 !important;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+/* Nagłówek */
+header {
+    background-image: url("/static/images/header_img.png");
+    background-size: cover;
+    background-position: center;
+    color: #ffdcc8;
+    text-align: center;
+    padding: 135px 0;
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+
+/* Linki w nagłówku */
+.nav-links {
+    text-align: center;
+    margin-top: 0px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav img.nav-button {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+nav img.nav-button:hover {
+    transform: scale(1.1);
+}
+
+/* Stylowanie tabeli z książkami */
+table {
+    background-color: #c62e39;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 707px;
+    max-height: 500px;
+    margin: 20px auto;
+    overflow-y: auto;
+}
+
+/* Stylowanie nagłówków tabeli */
+th {
+    background-color: #ffdcc8;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Stylowanie komórek tabeli */
+td {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffdcc8;
+    text-align: left;
+}
+
+/* Stylowanie przycisków w tabeli */
+a.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: #ff751f;
+    color: #c62e39;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+a.btn:hover {
+    background-color: #ff751f;
+}
+
+/* Formularz */
+form {
+    background-color: #c62e39;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Pola formularza */
+form input[type="text"], form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ff751f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff751f;
+}
+
+/* Przyciski linków */
+a.button {
+    display: inline-block;
+    background-color: #ff751f;
+    color: #ffdcc8;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    background-color: #ff751f;
+}
+
+/* Kontener książek */
+.book {
+    border: none;
+    margin: 20px auto;
+    max-width: 1000px;
+    width: 80%;
+    background-color: #ffdcc8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Wyśrodkowanie tytułu, autora, statusu w obrębie kontenera książki */
+.book h2, .book p {
+    text-align: center;
+}
+
+/* Wyśrodkowanie samej listy recenzji */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 20px auto;
+    max-width: 1000px;
+    width: 80%;
+    display: block;
+}
+
+/* Stylowanie elementów listy (li) */
+li {
+    background-color: #ff751f;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Usunięcie niepotrzebnych linii poziomych (hr) */
+hr {
+    border: none;
+    margin: 10px 0;
+}
+
+/* Stylowanie paska wyszukiwania */
+.search-container {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 707px;
+    text-align: center;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #c62e39;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #ff751f;
+    color: #4a4a4a;
+}
