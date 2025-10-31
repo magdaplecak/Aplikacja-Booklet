@@ -1,4 +1,4 @@
-# Instrukcja uruchomienia projektu BOOKLET z pliku ZIP w PyCharm
+# Instrukcja uruchomienia aplikacji BOOKLET w Pycharm
 
 # Opis aplikacji Booklet
 
@@ -9,52 +9,63 @@ Aplikacja **Booklet** pozwala na zarządzanie swoimi książkami w trzech katego
 
 Aplikacja została zaprojektowana na podstawie moich personalnych preferencji dotyczących książek. Interfejs został stworzony w **Canvie**, aby zapewnić estetyczny i przyjazny dla użytkownika wygląd.
 
-## 0. Przed uruchomieniem
+# Wymagania
+Aby uruchomić aplikację lokalnie, musisz mieć zainstalowane następujące oprogramowanie:
 
+- Python (w wersji 3.7 lub wyższej)
+- Django (w wersji 5.2 lub wyższej)
+- SQLite (baza danych używana w tej aplikacji, domyślnie dostępna w Pythonie)
+# Instrukcja uruchomienia aplikacji
 
-Proszę pobrać plik ZIP z e-mail na komputer. Następnie proszę postępować zgodnie z poniższymi krokami:
+Aby uruchomić aplikację, postępuj zgodnie z poniższymi krokami:
 
-## 1. Pobranie pliku ZIP
-Proszę pobrać plik ZIP z repozytorium na komputer.
+## 1. Klonowanie repozytorium
 
-## 2. Rozpakowanie pliku ZIP
-Po pobraniu pliku ZIP, proszę o rozpakowanie zawartości.
+Sklonuj repozytorium na swój komputer za pomocą poniższego polecenia:
 
-## 3. Otworzenie projektu w PyCharm
-- Proszę otworzyć PyCharm.
-- Następnie należy wybrać opcję „Open” (Otwórz) i wskazać folder, w którym został rozpakowany plik ZIP z projektem.
+git clone https://github.com/magdaplecak/Aplikacja-Booklet.git
 
-## 4. Utworzenie wirtualnego środowiska
-Proszę otworzyć terminal w PyCharm i przejść do katalogu z projektem: cd praca_podyplomowa
-Następnie proszę utworzyć wirtualne środowisko:
+## 2. Przejście do folderu z aplikacją
+
+Przejdź do folderu z aplikacją:
+
+cd Aplikacja-Booklet
+
+## 3. Utworzenie wirtualnego środowiska
+
+Stwórz wirtualne środowisko Pythona, które będzie zawierać wszystkie wymagane zależności:
 
 python -m venv .venv
 
+lub 
 
-## 5. Aktywacja wirtualnego środowiska
-- Na systemie **Windows** proszę aktywować środowisko za pomocą polecenia:
+python3 -m venv .venv **na MacOS**
+
+
+## 4. Aktywacja wirtualnego środowiska
+Aby aktywować wirtualne środowisko, użyj odpowiedniego polecenia w zależności od systemu operacyjnego:
+
+**Na systemie Linux/macOS:**
+
+source .venv/bin/activate
+
+
+**Na systemie Windows:**
 
 .venv\Scripts\activate
 
-
-## 6. Instalacja zależności
-Po aktywacji środowiska należy zainstalować wymagane zależności:
+## 5. Instalacja zależności
+Zainstaluj wszystkie wymagane pakiety z pliku requirements.txt:
 
 pip install -r requirements.txt
 
 
-## 7. Migracje bazy danych
-Proszę uruchomić migracje bazy danych, aby utworzyć odpowiednie tabele:
-
-python manage.py migrate
-
-
-## 8. Uruchomienie aplikacji
-Na tym etapie można uruchomić aplikację lokalnie za pomocą komendy:
+## 6. Uruchomienie aplikacji
+Aby uruchomić serwer aplikacji, użyj poniższego polecenia:
 
 python manage.py runserver
 
-## 9. Dostęp do aplikacji
+## 7. Dostęp do aplikacji
 Aplikacja będzie dostępna pod adresem:
 
 http://127.0.0.1:8000/
