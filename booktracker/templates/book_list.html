@@ -2,6 +2,17 @@
 
 {% block content %}
     <h1>List of Books</h1>
+
+    <!-- Sekcja logowania/rejestracji -->
+    {% if user.is_authenticated %}
+        <p>Witaj, {{ user.username }}!</p>
+        <a href="{% url 'logout' %}" class="btn btn-danger">Wyloguj się</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary">Zaloguj się</a> |
+        <a href="{% url 'register' %}" class="btn btn-secondary">Zarejestruj się</a>
+    {% endif %}
+
+    <!-- Lista książek -->
     <table>
         <thead>
             <tr>

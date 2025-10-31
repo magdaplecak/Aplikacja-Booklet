@@ -5,18 +5,35 @@
     box-sizing: border-box;
 }
 
-/* Tło dla całej strony */
+
+/* Ustawienia dla całego ciała strony */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #ffdcc8 !important;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Tło dla całej strony
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #ffdcc8 !important;
     color: #4a4a4a;
     line-height: 1.6;
     margin: 20px;
-}
+} */
 
 /* Nagłówek */
 header {
-    background-image: url("/static/images/header_img.png");
+    /*background-image: url("/static/images/header_img.png");*/
     background-size: cover;
     background-position: center;
     color: #ffdcc8;
@@ -81,15 +98,19 @@ a.btn {
     text-decoration: none;
     padding: 8px 16px;
     background-color: #ff751f;
-    color: #c62e39;
+    color: #4a4a4a;
     font-weight: bold;
     border-radius: 5px;
     display: inline-block;
+    justify-content: center;
+
 }
 
 a.btn:hover {
     background-color: #ff751f;
 }
+
+
 
 /* Formularz */
 form {
@@ -102,6 +123,7 @@ form {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    color: #ffffff
 }
 
 /* Pola formularza */
@@ -111,6 +133,7 @@ form input[type="text"], form textarea, form select {
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+
 }
 
 form button {
@@ -178,7 +201,7 @@ li {
     padding: 10px;
     border-radius: 5px;
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     text-align: center;
 }
 
@@ -188,21 +211,186 @@ hr {
     margin: 10px 0;
 }
 
-/* Stylowanie paska wyszukiwania */
+/* Stylowanie kontenera paska wyszukiwania */
 .search-container {
     margin: 20px auto;
-    width: 100%;
-    max-width: 707px;
-    text-align: center;
+    width: 80%;
+    max-width: 600px;  /* Maksymalna szerokość kontenera */
+    text-align: center;  /* Wyśrodkowanie zawartości */
 }
 
+/* Stylowanie samego pola wyszukiwania */
 #search {
     width: 100%;
     padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #c62e39;
+    font-size: 1rem;  /* Ustalony rozmiar czcionki */
+    border: 2px solid #c62e39;  /* Kolor ramki */
+    border-radius: 5px;  /* Zaokrąglone rogi */
+    box-sizing: border-box;  /* Zabezpieczenie przed nieoczekiwanym rozmiarem */
+    background-color: #ffdcc8;  /* Kolor tła pola wyszukiwania */
+    color: #4a4a4a;  /* Kolor czcionki na biały */
+    font-family: 'Arial', sans-serif;  /* Możesz ustawić czcionkę, jeśli chcesz */
+}
+
+
+
+
+/*Add class*/
+/* style.css */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
     background-color: #ff751f;
     color: #4a4a4a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* Wyśrodkowanie sekcji logowania/rejestracji */
+.auth-links {
+    display: flex;
+    justify-content: center;     /* Wyśrodkowanie przycisków w poziomie */
+    gap: 15px;                   /* Odstęp między przyciskami */
+    flex-wrap: wrap;             /* Pozwala na zawijanie przycisków, jeśli za dużo miejsca */
+}
+
+/* Styl dla logo, wyśrodkowane na samej górze */
+.logo-container {
+    text-align: center;
+    margin-top: 0;  /* Ustawienie marginesu górnego na 0 */
+    padding-top: 20px;  /* Dodajemy trochę paddingu od góry, aby logo miało przestrzeń */
+    height: auto;  /* Ustalamy, aby wysokość kontenera była dopasowana do zawartości */
+}
+
+/* Usuwanie marginesu z nagłówka */
+header {
+    margin: 0;  /* Usuń marginesy z nagłówka */
+    padding: 0;  /* Usuń padding z nagłówka */
+}
+
+/* Styl dla logo (jeśli jest za małe lub za duże, możesz dostosować) */
+.logo {
+    max-width: 100%;  /* Logo nie przekroczy szerokości kontenera */
+    height: auto;     /* Zachowanie proporcji logo */
+    display: block;   /* Zapewnia, że obrazek będzie traktowany jako blokowy element */
+    margin: 0 auto;   /* Wyśrodkowanie logo w kontenerze */
+}
+
+/* Nawigacja: wyświetlanie przycisków */
+.nav-links {
+    display: flex;
+    justify-content: center;  /* Przyciski będą wyśrodkowane w poziomie */
+    gap: 20px;                /* Odstęp między przyciskami */
+    padding: 15px 0;
+    background-color: #ffdcc8;  /* Kolor tła nawigacji */
+    margin-top: -15px;
+}
+
+/* Styl dla przycisków */
+.nav-links .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    color: #c62e39;  /* Czarny kolor czcionki */
+    background-color: #ff751f;  /* Pomarańczowy kolor tła przycisków */
+}
+
+/* Dostosowanie dla przycisków, aby były spójne */
+.nav-links .btn-primary {
+    background-color: #ff751f;  /* Pomarańczowe tło */
+    color: #4a4a4a;  /* Czarny tekst */
+}
+
+.nav-links .btn-secondary {
+    background-color: #ff751f;  /* Pomarańczowe tło */
+    color: #4a4a4a;  /* Czarny tekst */
+}
+
+.nav-links .btn-danger {
+    background-color: #ff751f;  /* Pomarańczowe tło */
+    color: #4a4a4a;  /* Czarny tekst */
+}
+
+.nav-links .btn-info {
+    background-color: #ff751f;  /* Pomarańczowe tło */
+    color: #4a4a4a;  /* Czarny tekst */
+}
+
+/* Efekt powiększania przycisków po najechaniu */
+.nav-links .btn:hover {
+    transform: scale(1.1);  /* Powiększenie przycisku o 10% */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+
+/* Stylowanie treści strony */
+main {
+    width: 100%;
+    max-width: 1200px; /* Można ograniczyć szerokość treści, żeby nie była za szeroka */
+    padding: 20px;
+}
+
+/* Styl dla napisu "Witaj, {{ user.username }}" */
+.welcome-text {
+    font-size: 36px;  /* Zwiększenie rozmiaru czcionki */
+    font-weight: bold;  /* Pogrubienie tekstu */
+    color: #ff6f61;  /* Kolor tekstu na pomarańczowy */
+    text-align: center;  /* Wyśrodkowanie tekstu */
+    margin-bottom: 20px;  /* Odstęp od przycisków */
+}}
+
+
+/* Wyśrodkowanie nagłówka "Rejestracja" i odstępy */
+.registration-header {
+    text-align: center; /* Wyśrodkowanie tekstu */
+    margin-bottom: 20px; /* Odstęp od formularza */
+    font-size: 30px; /* Zwiększenie rozmiaru czcionki */
+    color: #ff6f61; /* Pomarańczowy kolor */
+    font-weight: bold; /* Pogrubienie tekstu */
+}
+
+/* Stylowanie formularza */
+form {
+    text-align: center; /* Wyśrodkowanie formularza */
+    margin: 0 auto; /* Automatyczny margines z lewej i prawej */
+    width: 100%; /* Formularz wypełnia całą szerokość kontenera */
+    max-width: 500px; /* Ograniczenie szerokości formularza */
+}
+
+/* Stylowanie pól formularza */
+input, button {
+    width: 100%;  /* Ustawienie szerokości na 100% */
+    padding: 10px;
+    margin-bottom: 15px;  /* Dodanie odstępu między polami formularza */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Stylowanie przycisków */
+button {
+    background-color: #ff751f;  /* Pomarańczowy kolor tła */
+    color: white; /* Kolor czcionki na biały */
+    border: none; /* Bez obramowania */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6f61; /* Zmiana koloru przy najechaniu */
 }

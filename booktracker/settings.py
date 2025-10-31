@@ -26,8 +26,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Masz plik urls.py w katalogu głównym projektu (podyplom/), więc:
-ROOT_URLCONF = 'urls'   # NIE 'podyplom.urls'
+ROOT_URLCONF = 'urls'   # NIE 'booktracker.urls'
+
+LOGIN_URL = 'login'  # jeśli użytkownik nie jest zalogowany, zostanie przekierowany na stronę logowania
+
 
 TEMPLATES = [
     {

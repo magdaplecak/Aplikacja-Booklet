@@ -1,5 +1,7 @@
 from django import forms
 from .models import Book, Review
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 # forma dodawania książki
 class BookForm(forms.ModelForm):
@@ -28,3 +30,11 @@ class ReviewForm(forms.ModelForm):
                 'placeholder': 'Oceń od 1 do 10'
             })
         }
+
+#formularz logowania
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']

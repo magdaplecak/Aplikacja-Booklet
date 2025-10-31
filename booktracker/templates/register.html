@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <h2>Rejestracja</h2>
+    <div class="auth-links">
+        {% if user.is_authenticated %}
+            <p>Witaj, {{ user.username }}!</p>
+            <a href="{% url 'logout' %}" class="btn btn-danger">Wyloguj się</a>
+
+            <!-- Pokazujemy przyciski dla zalogowanych -->
+            <a href="{% url 'book_list' %}" class="btn btn-primary">Lista książek</a>
+            <a href="{% url 'add_book' %}" class="btn btn-info">Dodaj książkę</a>
+            <a href="{% url 'book_reviews' %}" class="btn btn-secondary">Recenzje</a>
+        {% else %}
+            <h2></h2>
+
+            <form method="POST" class="registration-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Zarejestruj się</button>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}
